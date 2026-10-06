@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="820" viewBox="0 0 1440 820" role="img" aria-labelledby="title desc">
+  <title id="title">Arbitrage Betting Engine analysis flow</title>
+  <desc id="desc">An explanatory diagram showing quote validation, implied probability, stake allocation, and guaranteed payout.</desc>
+  <rect width="1440" height="820" fill="#111411"/>
+  <rect x="28" y="28" width="1384" height="764" rx="8" fill="#f5f6f1"/>
+  <text x="72" y="84" fill="#71756d" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="2">DETERMINISTIC MARKET ANALYSIS</text>
+  <text x="72" y="132" fill="#151815" font-family="Arial, sans-serif" font-size="35" font-weight="700">From scattered odds to a verified worst-case payout</text>
+  <text x="72" y="164" fill="#747870" font-family="Arial, sans-serif" font-size="17">The engine rejects incomplete or stale inputs before it calculates an opportunity.</text>
+
+  <rect x="72" y="212" width="304" height="250" rx="6" fill="#ffffff" stroke="#d6d9d1"/>
+  <text x="96" y="246" fill="#72766e" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1">01 / QUOTES</text>
+  <text x="96" y="280" fill="#151815" font-family="Arial, sans-serif" font-size="22" font-weight="700">Same market, two books</text>
+  <rect x="96" y="308" width="256" height="54" rx="4" fill="#f2f4ed"/>
+  <text x="112" y="331" fill="#535750" font-family="Arial, sans-serif" font-size="12">BOOK A · NORTH FC</text>
+  <text x="328" y="343" text-anchor="end" fill="#355f12" font-family="Arial, sans-serif" font-size="21" font-weight="700">2.20</text>
+  <rect x="96" y="374" width="256" height="54" rx="4" fill="#f2f4ed"/>
+  <text x="112" y="397" fill="#535750" font-family="Arial, sans-serif" font-size="12">BOOK B · SOUTH FC</text>
+  <text x="328" y="409" text-anchor="end" fill="#355f12" font-family="Arial, sans-serif" font-size="21" font-weight="700">2.15</text>
+
+  <path d="M396 338h70" stroke="#8c9188" stroke-width="2"/>
+  <path d="m458 330 12 8-12 8" fill="none" stroke="#8c9188" stroke-width="2"/>
+
+  <rect x="490" y="212" width="386" height="250" rx="6" fill="#171a17"/>
+  <text x="516" y="246" fill="#a8ada3" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1">02 / VALIDATION</text>
+  <text x="516" y="280" fill="#ffffff" font-family="Arial, sans-serif" font-size="22" font-weight="700">Fail closed before math</text>
+  <circle cx="526" cy="319" r="5" fill="#bff064"/>
+  <text x="542" y="324" fill="#e6e9e1" font-family="Arial, sans-serif" font-size="14">Every declared outcome is covered</text>
+  <circle cx="526" cy="357" r="5" fill="#bff064"/>
+  <text x="542" y="362" fill="#e6e9e1" font-family="Arial, sans-serif" font-size="14">Quotes are fresh and parseable</text>
+  <circle cx="526" cy="395" r="5" fill="#bff064"/>
+  <text x="542" y="400" fill="#e6e9e1" font-family="Arial, sans-serif" font-size="14">Outcome identity is consistent</text>
+  <rect x="516" y="420" width="334" height="24" rx="3" fill="#2a3027"/>
+  <text x="683" y="436" text-anchor="middle" fill="#bff064" font-family="Arial, sans-serif" font-size="11" font-weight="700">FRESH · COMPLETE · COMPARABLE</text>
+
+  <path d="M896 338h70" stroke="#8c9188" stroke-width="2"/>
+  <path d="m958 330 12 8-12 8" fill="none" stroke="#8c9188" stroke-width="2"/>
+
+  <rect x="990" y="212" width="378" height="250" rx="6" fill="#ffffff" stroke="#d6d9d1"/>
+  <text x="1016" y="246" fill="#72766e" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1">03 / EDGE</text>
+  <text x="1016" y="280" fill="#151815" font-family="Arial, sans-serif" font-size="22" font-weight="700">Implied probability</text>
+  <text x="1016" y="330" fill="#5e625b" font-family="Arial, sans-serif" font-size="16">1 / 2.20 + 1 / 2.15</text>
+  <text x="1016" y="384" fill="#151815" font-family="Arial, sans-serif" font-size="42" font-weight="700">91.97%</text>
+  <rect x="1016" y="408" width="326" height="36" rx="4" fill="#eaf7d3"/>
+  <text x="1179" y="431" text-anchor="middle" fill="#355f12" font-family="Arial, sans-serif" font-size="13" font-weight="700">BELOW 100% · THEORETICAL EDGE EXISTS</text>
+
+  <rect x="72" y="510" width="1296" height="218" rx="6" fill="#ffffff" stroke="#d6d9d1"/>
+  <text x="96" y="546" fill="#72766e" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1">04 / BANKROLL ALLOCATION · 1,000.00 UNITS</text>
+  <rect x="96" y="574" width="442" height="112" rx="5" fill="#f2f4ed"/>
+  <text x="118" y="604" fill="#535750" font-family="Arial, sans-serif" font-size="12">NORTH FC · BOOK A</text>
+  <text x="118" y="646" fill="#151815" font-family="Arial, sans-serif" font-size="30" font-weight="700">494.25</text>
+  <text x="512" y="646" text-anchor="end" fill="#72766e" font-family="Arial, sans-serif" font-size="13">payout 1,087.35</text>
+  <rect x="554" y="574" width="442" height="112" rx="5" fill="#f2f4ed"/>
+  <text x="576" y="604" fill="#535750" font-family="Arial, sans-serif" font-size="12">SOUTH FC · BOOK B</text>
+  <text x="576" y="646" fill="#151815" font-family="Arial, sans-serif" font-size="30" font-weight="700">505.75</text>
+  <text x="970" y="646" text-anchor="end" fill="#72766e" font-family="Arial, sans-serif" font-size="13">payout 1,087.36</text>
+  <rect x="1012" y="574" width="330" height="112" rx="5" fill="#171a17"/>
+  <text x="1034" y="604" fill="#a8ada3" font-family="Arial, sans-serif" font-size="11">GUARANTEED WORST CASE</text>
+  <text x="1034" y="647" fill="#bff064" font-family="Arial, sans-serif" font-size="31" font-weight="700">+87.35</text>
+  <text x="1318" y="647" text-anchor="end" fill="#e6e9e1" font-family="Arial, sans-serif" font-size="13">8.74% ROI</text>
+
+  <text x="72" y="766" fill="#878b83" font-family="Arial, sans-serif" font-size="12">EXPLANATORY DIAGRAM · VALUES ARE GENERATED FROM THE INCLUDED FIXTURE, NOT LIVE BOOKMAKER DATA.</text>
+</svg>

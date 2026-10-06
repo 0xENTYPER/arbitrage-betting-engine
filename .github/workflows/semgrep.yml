@@ -1,0 +1,18 @@
+name: Semgrep OSS scan
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  semgrep-oss:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install --user semgrep==1.160.0
+      - run: echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+      - run: semgrep scan --config=auto
